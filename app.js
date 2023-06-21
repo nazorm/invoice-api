@@ -21,7 +21,7 @@ mongoose
     console.log(error);
   });
 
-app.listen("3000");
+app.listen(process.env.PORT);
 
 //register ejs ==> a template engine translating html to readable and writeable data for express
 app.set("view engine", "ejs"); // automatically looks in the views folder

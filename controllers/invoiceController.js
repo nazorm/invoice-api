@@ -35,6 +35,7 @@ const invoice_index = (req, res) => {
     Invoice.find()
       .then((result) => {
         // res.send(result);
+        res.status(200)
         res.json(result);
         console.log("get all success");
       })
@@ -49,6 +50,7 @@ const invoice_index = (req, res) => {
       .save()
       .then((result) => {
         // res.send(result);
+        res.status(200)
         res.json(result);
         console.log("another success");
       })
@@ -61,11 +63,12 @@ const invoice_index = (req, res) => {
     const sentInvoice = new Invoice(req.body);
     sentInvoice
       .save()
-      .then((response) => {
-        // res.send(response);
+      .then((result) => {
+        res.setHeader('Content-Type', 'application/json')
+        res.status(200)
         res.json(result);
       })
-      .then((error) => console.log(error));
+      .catch((error) => console.log(error));
   };
 
 
@@ -74,12 +77,13 @@ const invoice_details = (req, res) => {
     Invoice.findById(id)
       .then((result) => {
         // res.send(result);
+        res.status(200)
         res.json(result);
         console.log("successful");
       })
       .catch((err) => {
         console.log("single error", err)
-        // res.status(404).render('/404')
+        // res.status(404).render('/views/404')
       });
   };
 
@@ -88,6 +92,7 @@ const invoice_delete = (req, res) => {
     Invoice.findByIdAndDelete(id)
       .then((result) => {
         // res.send(result);
+        res.status(200)
         res.json(result);
         console.log("delete successful");
       })
