@@ -1,0 +1,13 @@
+body{
+    border: 1px solid brown;
+    padding: 10px 20px;
+}
+p{
+    font-weight: 700;
+}
+.title {
+  color: pink;
+}
+.snippet {
+  color: green;
+}
