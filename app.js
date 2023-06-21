@@ -1,4 +1,5 @@
 const express = require("express");
+require('dotenv').config()
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const app = express();
@@ -7,11 +8,8 @@ const invoiceRoutes = require("./routes/invoiceRoutes")
 // middleware for accepting form data from post requests
 app.use(express.urlencoded({ extended: true }));
 
-const dbUri =
-  "mongodb+srv://invoiceadmin:test1234@invoicecluster.66u6pnw.mongodb.net/invoice-data?retryWrites=true&w=majority";
-
 mongoose
-  .connect(dbUri, {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

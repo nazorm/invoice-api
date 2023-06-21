@@ -34,7 +34,7 @@ const newInvoiceItem = {
 const invoice_index = (req, res) => {
     Invoice.find()
       .then((result) => {
-        res.send(result);
+        // res.send(result);
         res.json(result);
         console.log("get all success");
       })
@@ -78,7 +78,7 @@ const invoice_details = (req, res) => {
       })
       .catch((err) => {
         console.log("single error", err)
-        res.status(404).render('/404')
+        // res.status(404).render('/404')
       });
   };
 
