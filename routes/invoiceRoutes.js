@@ -14,9 +14,9 @@ router.get("/", invoiceController.invoice_index);
 
 // find single invoice by id
 
-router.get("/single", invoiceController.invoice_details);
+router.get("/single/:id", invoiceController.invoice_details);
 
 // delete invoice
-router.delete("/delete", invoiceController.invoice_delete);
+router.delete("/delete/:id", invoiceController.invoice_delete);
 
 module.exports = router;

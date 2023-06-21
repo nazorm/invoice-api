@@ -70,7 +70,8 @@ const invoice_index = (req, res) => {
 
 
 const invoice_details = (req, res) => {
-    Invoice.findById("64862f0657f1eee165750d9f")
+  const id = req.params.id;
+    Invoice.findById(id)
       .then((result) => {
         // res.send(result);
         res.json(result);
@@ -83,7 +84,8 @@ const invoice_details = (req, res) => {
   };
 
 const invoice_delete = (req, res) => {
-    Invoice.findByIdAndDelete("648a03d06909df97489238b0")
+  const id = req.params.id;
+    Invoice.findByIdAndDelete(id)
       .then((result) => {
         // res.send(result);
         res.json(result);
