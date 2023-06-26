@@ -35,3 +35,5 @@ app.use((req, res, next) => {
   next();
   //essentially means I am done with this block of code/ function move on to the next
 });
+
+module.exports = app;
