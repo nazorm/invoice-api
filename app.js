@@ -3,7 +3,7 @@ require('dotenv').config()
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const app = express();
-const invoiceRoutes = require("../routes/invoiceRoutes")
+const invoiceRoutes = require("./routes/invoiceRoutes")
 
 // middleware for accepting form data from post requests
 app.use(express.urlencoded({ extended: true }));
