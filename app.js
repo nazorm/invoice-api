@@ -26,6 +26,10 @@ app.listen(process.env.PORT);
 //register ejs ==> a template engine translating html to readable and writeable data for express
 app.set("view engine", "ejs"); // automatically looks in the views folder
 
+app.use(cors({
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
+
 // invoice routes are all the methods established for invoice
 app.use('/invoices',invoiceRoutes)
 
